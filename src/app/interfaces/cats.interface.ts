@@ -1,8 +1,8 @@
 export interface CatsList {
-  images: CatImage[]
+  images: Cat[]
 }
 
-interface CatImage {
+export interface Cat {
   url: string;
   id: string;
 }
