@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { CatsList } from "../interfaces/cats.interface";
+import { CatsList } from "../../interfaces/cats.interface";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({

@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-<h1>Vote !</h1>
-<h2>Pour le chat le plus <span>mignon</span></h2>
+<h1 class="title">Vote !</h1>
+<h2 class="title">Pour le chat le plus <span>mignon</span></h2>
 
 <div class="versus-container">
   @for (cat of drawCats; track cat.id) {
@@ -9,6 +9,6 @@
   }
 </div>
 
-<div class="see-ranking">
-  <a routerLink="/ranking">Voir le classement</a>
+<div>
+  <a routerLink="/ranking" class="cta">Voir le classement</a>
 </div>

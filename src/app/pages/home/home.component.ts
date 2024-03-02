@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CatsService } from "../../services/cats.service";
+import { CatsService } from "../../services/cats/cats.service";
 import { Cat, CatsList } from "../../interfaces/cats.interface";
 import { NgForOf } from "@angular/common";
 import { HeaderComponent } from "../../components/header/header.component";
 import { RouterLink } from "@angular/router";
+import { VotesService } from "../../services/votes/votes.service";
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private catsService: CatsService,
+    private votesService: VotesService,
   ) { }
   ngOnInit(): void {
     this.catsService.getCats().subscribe({
@@ -50,8 +52,9 @@ export class HomeComponent implements OnInit {
   }
 
   public saveVote(catId: string): void {
-    const votesString: string | null = localStorage.getItem('votes');
-    const votes = votesString ? JSON.parse(votesString) : {};
+    const votes = this.votesService.getVotes();
+    console.log(votes);
+    console.log(votes[catId]);
     votes[catId] = (votes[catId] || 0) + 1;
     localStorage.setItem('votes', JSON.stringify(votes));
     this.drawInit();

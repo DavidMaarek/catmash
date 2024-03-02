@@ -36,3 +36,38 @@ body {
     transform: rotate(20.71deg);
   }
 }
+
+.title {
+  background-color: #343434;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  margin: auto;
+  padding: 15px 20px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  width: max-content;
+  z-index: 2;
+
+  span {
+    background-color: #fff;
+    background-image: linear-gradient(88deg, #FFCA42 46.31%, #FF38EB 98.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.cta {
+  background: linear-gradient(90deg, #FF38EB -7.53%, #FFCA42 99.78%);
+  border-radius: 50px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.25);
+  color: #fff;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: max-content;
+}

@@ -1,1 +1,36 @@
-<p>ranking works!</p>
+<app-header></app-header>
+<h1 class="title">Le classement</h1>
+
+@if (catsRanking.length) {
+  <div class="podium">
+    @for (position of [1, 0, 2]; track $index) {
+      <div>
+        <img src="assets/images/podium/top-{{ position + 1 }}.svg" alt="">
+        <div>
+          <img src="{{catsRanking[position].url}}" alt="">
+        </div>
+        <p>{{catsRanking[position].vote}} vote{{ catsRanking[position].vote > 0 ? 's' : ''}}</p>
+      </div>
+    }
+  </div>
+}
+
+<div class="paging-container">
+  @for (cat of catsInCurrentPage; track cat.id) {
+    <div>
+      <img src="{{cat.url}}" alt="">
+    </div>
+  }
+</div>
+
+<ul class="paging-numbers">
+  @for (p of [].constructor(totalPages); track $index) {
+    <li (click)="updatePaging($index + 1)" [ngClass]="{'active': $index + 1 == currentPage}">
+      {{$index + 1}}
+    </li>
+  }
+</ul>
+
+<div>
+  <a routerLink="/" class="cta">Votez pour les chats</a>
+</div>
