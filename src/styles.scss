@@ -90,3 +90,15 @@ body {
   text-align: center;
   margin-top: 25px;
 }
+
+.img-loader {
+  animation: img-loader .4s linear infinite;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 33%, #2588ff 50%, rgba(0,0,0,0) 66%) rgba(0,0,0,0);
+  background-size: 300% 100%;
+}
+
+@keyframes img-loader {
+  0% {
+    background-position: 100%
+  }
+}

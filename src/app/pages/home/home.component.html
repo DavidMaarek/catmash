@@ -8,6 +8,7 @@
     @for (cat of twoRandomCats; track cat.id) {
       <img src="{{ cat.url }}"
            (click)="saveVote(cat.id)"
+           class="img-loader"
            width="295"
            height="295"
            alt="Image d'un chat sélectionné au hasard">

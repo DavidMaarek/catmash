@@ -5,9 +5,9 @@
   <div class="podium">
     @for (position of [1, 0, 2]; track $index) {
       <div class="top-{{position + 1}}">
-        <img src="assets/images/podium/top-{{ position + 1 }}.svg" alt="" class="paw">
+        <img src="assets/images/podium/top-{{ position + 1 }}.svg" class="paw" alt="">
         <div class="img-container">
-          <img src="{{catsWithVotes[position].url}}" alt="">
+          <img src="{{catsWithVotes[position].url}}" class="img-loader" alt="">
         </div>
         <p class="votes">
           <span>{{catsWithVotes[position].vote}} vote{{ catsWithVotes[position].vote > 0 ? 's' : ''}}</span>
@@ -23,7 +23,7 @@
       <div class="item">
         <p class="position">{{(currentPage - 1) * catsPerPage + ($index + 1) + 3 }}</p>
         <div class="img-container">
-          <img src="{{cat.url}}" alt="">
+          <img src="{{cat.url}}" class="img-loader" alt="">
         </div>
         <p class="votes">{{cat.vote}} vote{{ cat.vote > 0 ? 's' : ''}}</p>
       </div>
