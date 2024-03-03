@@ -1,11 +1,14 @@
 header {
   a {
     display: block;
-    padding: 25px;
+    padding: 25px 50px;
 
     img {
       display: block;
       margin: auto;
+      width: 100%;
+      height: auto;
+      max-width: 250px;
     }
   }
 }
