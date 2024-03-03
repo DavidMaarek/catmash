@@ -9,7 +9,9 @@
         <div class="img-container">
           <img src="{{catsWithVotes[position].url}}" alt="">
         </div>
-        <p class="votes">{{catsWithVotes[position].vote}} vote{{ catsWithVotes[position].vote > 0 ? 's' : ''}}</p>
+        <p class="votes">
+          <span>{{catsWithVotes[position].vote}} vote{{ catsWithVotes[position].vote > 0 ? 's' : ''}}</span>
+        </p>
       </div>
     }
   </div>
