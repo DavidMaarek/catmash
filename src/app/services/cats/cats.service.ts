@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { CatsList } from "../../interfaces/cats.interface";
+import { CatsFromApi } from "../../interfaces/cats.interface";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
@@ -12,7 +12,7 @@ export class CatsService {
     private http: HttpClient,
   ) { }
 
-  public getCats(): Observable<CatsList> {
-    return this.http.get<CatsList>('https://data.latelier.co/cats.json');
+  public getCats(): Observable<CatsFromApi> {
+    return this.http.get<CatsFromApi>('https://data.latelier.co/cats.json');
   }
 }

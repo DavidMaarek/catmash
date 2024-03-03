@@ -1,15 +1,15 @@
 <app-header></app-header>
 <h1 class="title">Le classement</h1>
 
-@if (catsRanking.length) {
+@if (catsWithVotes.length) {
   <div class="podium">
     @for (position of [1, 0, 2]; track $index) {
       <div class="top-{{position + 1}}">
         <img src="assets/images/podium/top-{{ position + 1 }}.svg" alt="" class="paw">
         <div class="img-container">
-          <img src="{{catsRanking[position].url}}" alt="">
+          <img src="{{catsWithVotes[position].url}}" alt="">
         </div>
-        <p class="votes">{{catsRanking[position].vote}} vote{{ catsRanking[position].vote > 0 ? 's' : ''}}</p>
+        <p class="votes">{{catsWithVotes[position].vote}} vote{{ catsWithVotes[position].vote > 0 ? 's' : ''}}</p>
       </div>
     }
   </div>

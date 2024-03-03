@@ -1,4 +1,4 @@
-export interface CatsList {
+export interface CatsFromApi {
   images: Cat[]
 }
 
@@ -7,7 +7,7 @@ export interface Cat {
   id: string;
 }
 
-export interface CatRanking {
+export interface CatWithVote {
   url: string;
   id: string;
   vote: number;

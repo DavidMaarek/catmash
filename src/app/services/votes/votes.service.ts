@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CatRanking } from "../../interfaces/cats.interface";
+import { CatWithVote } from "../../interfaces/cats.interface";
 
 @Injectable({
   providedIn: 'root'
