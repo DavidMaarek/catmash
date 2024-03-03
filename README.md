@@ -1,6 +1,7 @@
 # Catmash
 
-You can access this projet on [catmash.davidmaarek.fr](https://catmash.davidmaarek.fr) and vote for your favorite cats.
+You can access this projet on [catmash.davidmaarek.fr](https://catmash.davidmaarek.fr) and vote for your favorite cats.  
+For the moment votes are recorded locally in localStorage.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
