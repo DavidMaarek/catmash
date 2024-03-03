@@ -4,12 +4,12 @@
 @if (catsRanking.length) {
   <div class="podium">
     @for (position of [1, 0, 2]; track $index) {
-      <div>
-        <img src="assets/images/podium/top-{{ position + 1 }}.svg" alt="">
-        <div>
+      <div class="top-{{position + 1}}">
+        <img src="assets/images/podium/top-{{ position + 1 }}.svg" alt="" class="paw">
+        <div class="img-container">
           <img src="{{catsRanking[position].url}}" alt="">
         </div>
-        <p>{{catsRanking[position].vote}} vote{{ catsRanking[position].vote > 0 ? 's' : ''}}</p>
+        <p class="votes">{{catsRanking[position].vote}} vote{{ catsRanking[position].vote > 0 ? 's' : ''}}</p>
       </div>
     }
   </div>
