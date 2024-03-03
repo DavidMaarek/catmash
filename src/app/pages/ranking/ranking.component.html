@@ -15,10 +15,14 @@
   </div>
 }
 
-<div class="paging-container">
+<div class="page-img-container">
   @for (cat of catsInCurrentPage; track cat.id) {
-    <div>
-      <img src="{{cat.url}}" alt="">
+    <div class="item">
+      <p class="position">{{(currentPage - 1) * catsPerPage + ($index + 1) + 3 }}</p>
+      <div class="img-container">
+        <img src="{{cat.url}}" alt="">
+      </div>
+      <p class="votes">{{cat.vote}} vote{{ cat.vote > 0 ? 's' : ''}}</p>
     </div>
   }
 </div>
