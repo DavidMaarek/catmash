@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{display:none;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="119.7597" y1="979.4538" x2="904.2403" y2="44.5462">
+	<stop  offset="0" style="stop-color:#0377FF"/>
+	<stop  offset="1" style="stop-color:#FF38EB"/>
+</linearGradient>
+<path class="st0" d="M752.22,1024H271.78C121.68,1024,0,902.32,0,752.22V271.78C0,121.68,121.68,0,271.78,0h480.45
+	C902.32,0,1024,121.68,1024,271.78v480.45C1024,902.32,902.32,1024,752.22,1024z"/>
+<path id="Cat" class="st1" d="M902.89,715.79V204.08l-73.29,73.69c-48.86-29.68-109.94-29.68-158.8,0l-73.29-73.69v204.69
+	c-168.98,0-305.39,137.14-305.39,307.03c-55.99,0-101.8-46.05-101.8-102.34c0-56.29,45.81-102.34,101.8-102.34
+	c28.5,0,50.9-22.52,50.9-51.17c0-28.66-22.4-51.17-50.9-51.17c-111.98,0-203.59,92.11-203.59,204.69
+	c0,112.58,91.62,204.68,203.59,204.68h610.77c28.5,0,50.9-22.52,50.9-51.17C953.79,738.31,931.39,715.79,902.89,715.79z"/>
+<g id="gahPZf_00000032623307560046977140000013797956917736840328_" class="st2">
+	
+		<image style="display:inline;overflow:visible;" width="192" height="192" id="gahPZf" xlink:href="8FED07955F91496D.png"  transform="matrix(5.3427 0 0 5.3427 -0.7368 -1.7895)">
+	</image>
+</g>
+</svg>
