@@ -18,6 +18,7 @@ import { VotesService } from "../../services/votes/votes.service";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  public errorApi: boolean = false;
   public catsList: CatsList = { images: [] };
   public drawCats: Cat[] = [];
 
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
         this.drawInit();
       },
       error: (error): void => {
-        console.error(error);
+        this.errorApi = true;
       }
     });
   }

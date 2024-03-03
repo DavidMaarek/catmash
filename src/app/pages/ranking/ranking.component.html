@@ -15,25 +15,31 @@
   </div>
 }
 
-<div class="page-img-container">
-  @for (cat of catsInCurrentPage; track cat.id) {
-    <div class="item">
-      <p class="position">{{(currentPage - 1) * catsPerPage + ($index + 1) + 3 }}</p>
-      <div class="img-container">
-        <img src="{{cat.url}}" alt="">
+@if (catsInCurrentPage.length) {
+  <div class="page-img-container">
+    @for (cat of catsInCurrentPage; track cat.id) {
+      <div class="item">
+        <p class="position">{{(currentPage - 1) * catsPerPage + ($index + 1) + 3 }}</p>
+        <div class="img-container">
+          <img src="{{cat.url}}" alt="">
+        </div>
+        <p class="votes">{{cat.vote}} vote{{ cat.vote > 0 ? 's' : ''}}</p>
       </div>
-      <p class="votes">{{cat.vote}} vote{{ cat.vote > 0 ? 's' : ''}}</p>
-    </div>
-  }
-</div>
+    }
+  </div>
 
-<ul class="paging-numbers">
-  @for (p of [].constructor(totalPages); track $index) {
-    <li (click)="updatePaging($index + 1)" [ngClass]="{'active': $index + 1 == currentPage}">
-      {{$index + 1}}
-    </li>
-  }
-</ul>
+  <ul class="paging-numbers">
+    @for (p of [].constructor(totalPages); track $index) {
+      <li (click)="updatePaging($index + 1)" [ngClass]="{'active': $index + 1 == currentPage}">
+        {{$index + 1}}
+      </li>
+    }
+  </ul>
+}
+
+@if (errorApi) {
+  <p class="error-message">Une erreur est survenue</p>
+}
 
 <div>
   <a routerLink="/" class="cta">Votez pour les chats</a>

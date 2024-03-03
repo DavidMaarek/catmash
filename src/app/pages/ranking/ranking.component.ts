@@ -18,6 +18,7 @@ import { ActivatedRoute, Router, RouterLink, UrlSerializer, UrlTree } from "@ang
   styleUrl: './ranking.component.scss'
 })
 export class RankingComponent implements OnInit {
+  public errorApi: boolean = false;
   public catsRanking: CatRanking[] = [];
   public votes: Record<string, number> = {};
   public queryParamP: string | null = null;
@@ -59,7 +60,7 @@ export class RankingComponent implements OnInit {
         this.updatePaging(this.currentPage);
       },
       error: (error): void => {
-        console.error(error);
+        this.errorApi = true;
       }
     })
   }
