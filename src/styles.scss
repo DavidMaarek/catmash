@@ -14,6 +14,11 @@ body {
   font-family: 'Poppins', sans-serif;
   position: relative;
 
+  &,
+  a {
+    color: #fff;
+  }
+
   &:before {
     content: '';
     width: 82px;
@@ -41,7 +46,6 @@ body {
   background-color: #343434;
   border-radius: 50px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-  color: #fff;
   margin: auto;
   padding: 15px 20px;
   position: relative;
@@ -63,7 +67,6 @@ body {
   background: linear-gradient(90deg, #FF38EB -7.53%, #FFCA42 99.78%);
   border-radius: 50px;
   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.25);
-  color: #fff;
   display: block;
   margin: 20px auto;
   padding: 10px 15px;
