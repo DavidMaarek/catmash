@@ -53,10 +53,8 @@ export class HomeComponent implements OnInit {
 
   public saveVote(catId: string): void {
     const votes = this.votesService.getVotes();
-    console.log(votes);
-    console.log(votes[catId]);
     votes[catId] = (votes[catId] || 0) + 1;
-    localStorage.setItem('votes', JSON.stringify(votes));
+    this.votesService.setVotes(votes);
     this.drawInit();
   }
 }
