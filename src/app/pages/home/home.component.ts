@@ -28,12 +28,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.catsService.getCats().subscribe({
       next: (response: CatsList): void => {
-        console.log(response);
         this.catsList = response;
         this.drawInit();
       },
       error: (error): void => {
-        console.log(error);
+        console.error(error);
       }
     });
   }
