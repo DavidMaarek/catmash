@@ -52,7 +52,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   transform: rotate(-2deg);
-  width: max-content;
+  width: fit-content;
   z-index: 2;
 
   span {
@@ -70,7 +70,8 @@ body {
   display: block;
   margin: 20px auto;
   padding: 10px 15px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: max-content;
+  width: fit-content;
 }
