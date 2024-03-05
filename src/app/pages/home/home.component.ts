@@ -40,10 +40,14 @@ export class HomeComponent implements OnInit {
 
   private drawInit(): void {
     this.twoRandomCats = [];
-    while (this.twoRandomCats.length < 2) {
-      const randomCat: Cat = this.getRandomCat();
-      const catIndex: number = this.twoRandomCats.findIndex((cat: Cat): boolean => cat.id === randomCat.id);
-      catIndex === -1 ? this.twoRandomCats.push(randomCat) : null;
+    if (this.cats.length > 2) {
+      while (this.twoRandomCats.length < 2) {
+        const randomCat: Cat = this.getRandomCat();
+        const catIndex: number = this.twoRandomCats.findIndex((cat: Cat): boolean => cat.id === randomCat.id);
+        if (catIndex === -1) this.twoRandomCats.push(randomCat);
+      }
+    } else {
+      this.errorApi = true;
     }
   }
 
