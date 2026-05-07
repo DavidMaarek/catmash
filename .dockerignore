@@ -1,0 +1,11 @@
+node_modules
+dist
+.angular
+.git
+.github
+.vscode
+.idea
+.DS_Store
+*.log
+coverage
+README.md
