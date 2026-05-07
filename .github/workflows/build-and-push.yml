@@ -57,6 +57,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # Le short SHA doit être calculé dans le runner GHA. Si on faisait le
+      # `${GITHUB_SHA:0:7}` côté SSH (sur le VPS), GITHUB_SHA n'existe pas
+      # là-bas → tag ":sha-" vide → image inexistante → rollback Swarm silencieux.
+      - name: Compute short SHA
+        id: vars
+        run: echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
       - uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -64,8 +71,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             set -e
-            SHORT_SHA=${GITHUB_SHA:0:7}
             docker service update \
-              --image ${{ env.IMAGE_NAME }}:sha-${SHORT_SHA} \
+              --image ${{ env.IMAGE_NAME }}:sha-${{ steps.vars.outputs.short_sha }} \
               --with-registry-auth \
               ${{ env.SERVICE_NAME }}
