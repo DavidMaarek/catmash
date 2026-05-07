@@ -8,11 +8,13 @@ import { HttpClient } from "@angular/common/http";
 })
 export class CatsService {
 
+  private readonly CATS_DATA_URL = '/assets/cats.json';
+
   constructor(
     private http: HttpClient,
   ) { }
 
   public getCats(): Observable<CatsFromApi> {
-    return this.http.get<CatsFromApi>('https://data.latelier.co/cats.json');
+    return this.http.get<CatsFromApi>(this.CATS_DATA_URL);
   }
 }
