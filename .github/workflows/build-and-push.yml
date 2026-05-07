@@ -1,4 +1,4 @@
-name: Build & Push
+name: Build & Deploy
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 env:
   IMAGE_NAME: ghcr.io/davidmaarek/catmash
+  SERVICE_NAME: vps_catmash-davidmaarek-fr
 
 jobs:
   build:
@@ -47,3 +48,24 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy:
+    # Met à jour le service Swarm en pointant sur le SHA de ce commit.
+    # Pour le 1er deploy (avant que le service n'existe sur le VPS), ce step
+    # plantera — c'est attendu. Une fois le service créé via vps-infra
+    # (`docker stack deploy`), les pushs suivants déploieront automatiquement.
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: githubactions
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            set -e
+            SHORT_SHA=${GITHUB_SHA:0:7}
+            docker service update \
+              --image ${{ env.IMAGE_NAME }}:sha-${SHORT_SHA} \
+              --with-registry-auth \
+              ${{ env.SERVICE_NAME }}
